@@ -182,6 +182,17 @@ function showToast(message, type) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 4000);
 }
+// ── 9. Smart Email Link ──────────────────
+const emailLink = document.getElementById('email-link');
+if (emailLink) {
+  emailLink.addEventListener('click', function(e) {
+    const isMobile = /iPhone|iPad|Android|Mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+      e.preventDefault();
+      window.open('https://mail.google.com/mail/?view=cm&to=thelastsupper2004@gmail.com', '_blank');
+    }
+  });
+}
 
 
 
